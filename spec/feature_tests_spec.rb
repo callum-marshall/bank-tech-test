@@ -48,7 +48,7 @@ describe 'Feature Tests' do
 
       allow(Time).to receive(:now).and_return(Time.parse('11/01/2012'))
       account.withdraw(500)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n11/01/2012 || || 500 || 500\n10/01/2012 || 1000 || || 1000"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n11/01/2012 || || 500.00 || 500.00\n10/01/2012 || 1000.00 || || 1000.00"
     end
   end
 end

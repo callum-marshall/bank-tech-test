@@ -10,6 +10,7 @@
 - created rubocop.yml added scaffolint
 - TDD'd up until I realised I needed a redesign (when i needed to include transaction dates)
 - refactored to include required statement formatting
+- added decimal places method
 - need to extract statement formatting behaviour
 
 ---

@@ -26,7 +26,7 @@ describe 'Account' do
       allow(Time).to receive(:now).and_return(Time.parse('01/04/2001'))
       account.deposit(99)
       expect(account.balance).to eq(default_balance + 99)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n01/04/2001 || 99 || || 99"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n01/04/2001 || 99.00 || || 99.00"
     end
   end
 
@@ -35,7 +35,7 @@ describe 'Account' do
       allow(Time).to receive(:now).and_return(Time.parse('02/05/2002'))
       account.withdraw(43)
       expect(account.balance).to eq(-43)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n02/05/2002 || || 43 || -43"
+      expect(account.print_statement).to eq "date || credit || debit || balance\n02/05/2002 || || 43.00 || -43.00"
     end
   end
 

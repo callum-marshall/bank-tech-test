@@ -14,12 +14,16 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @statement.prepend("\n#{date} || #{amount} || || #{balance}")
+    value = currency_format(amount)
+    balance = currency_format(@balance)
+    @statement.prepend("\n#{date} || #{value} || || #{balance}")
   end
 
   def withdraw(amount)
     @balance -= amount
-    @statement.prepend("\n#{date} || || #{amount} || #{balance}")
+    value = currency_format(amount)
+    balance = currency_format(@balance)
+    @statement.prepend("\n#{date} || || #{value} || #{balance}")
   end
 
   DEFAULT_BALANCE = 0
@@ -28,6 +32,10 @@ class Account
 
   def date
     return Time.now.strftime("%d/%m/%Y")
+  end
+
+  def currency_format(amount)
+    sprintf("%.2f", amount)
   end
 
 end
