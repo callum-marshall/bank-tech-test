@@ -1,9 +1,16 @@
 # Bank Tech Test
 ## Week 10 - Makers Academy Individual Challenge
 
+- git init
+- added my approach to readme
+- added user stories to readme
+- crc card for 1st user story
+- rspec init
+- bundle init (add ruby version, rspec, rubocop and simplecov to gemfile)
+- created rubocop.yml added scaffolint
 
 ---
-Makers given readme...
+Description of the problem - Makers given readme...
 
 # Bank tech test
 
@@ -63,6 +70,10 @@ I then wrote User Stories to match these expected actions
 ### User Stories
 
 ```
+as a bank manager
+so that we can keep our books straight
+i would like accounts to start with an opening balance of 0
+
 as a bank user
 so that i can see how much money is in my account
 I would like to be able to print a statement that shows my balance
