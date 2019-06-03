@@ -1,3 +1,10 @@
+# Bank Tech Test
+## Week 10 - Makers Academy Individual Challenge
+
+
+---
+Makers given readme...
+
 # Bank tech test
 
 Today, you'll practice doing a tech test.
@@ -30,4 +37,57 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+```
+---
+
+## My Approach
+
+I started by making a list of the actions (potentially methods) I expect my program will need to meet the requirements.
+
+make deposits
+make withdrawal
+print statements (in the specified format)
+
+record date
+record balance
+record deposits (credit)
+record withdrawals (deposit)
+
+see date
+see balance
+see deposits (credit)
+see withdrawals (deposit)
+
+I then wrote User Stories to match these expected actions
+
+### User Stories
+
+```
+as a bank user
+so that i can see how much money is in my account
+I would like to be able to print a statement that shows my balance
+
+as a bank user
+so that i can store money
+i would like to be able to make deposits into my account
+
+as a bank user
+so that i can keep track of my deposits
+i would like to be able to print a statement that shows my deposits
+
+as a bank user
+so that i can spend my money
+i would like to be able to make withdrawals out of my account
+
+as a bank user
+so that i can keep track of my deposits
+i would like to be able to print a statement that shows my withdrawals
+
+as a bank user
+so that i know which days i made withdrawals and deposits
+i would like to be able to print a statement that shows the date on which my activities occurred
+
+as a bank manager
+so that i can have a uniform statement
+i would like our customers statements to be printed in the specified format
 ```
