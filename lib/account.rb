@@ -10,7 +10,9 @@ class Account
     return "#{@balance}"
   end
 
-  private
+  def deposit(amount)
+    @balance += amount
+  end
 
   DEFAULT_BALANCE = 0
 
