@@ -15,16 +15,6 @@ describe 'Feature Tests' do
   end
 
 # as a bank user
-# so that i can see how much money is in my account
-# I would like to be able to print a statement that shows my balance
-
-  describe 'checking the account balance' do
-    it 'customers can print a statement that includes their balance' do
-      expect(account.print_statement).to include "0"
-    end
-  end
-
-# as a bank user
 # so that i can store money
 # i would like to be able to make deposits into my account
 
@@ -52,9 +42,13 @@ describe 'Feature Tests' do
 # i would like to be able to print a statement that shows the date on which those activities occurred
 
   context 'printing a statement' do
-    it 'customers can see the date on their statement' do
-      allow(Time).to receive(:now).and_return(Time.parse('14/01/2012'))
-      expect(account.print_statement).to include "14/01/2012"
+    it 'customers can see the date of their deposits and withdrawals on their statement' do
+      allow(Time).to receive(:now).and_return(Time.parse('10/01/2012'))
+      account.deposit(1000)
+
+      allow(Time).to receive(:now).and_return(Time.parse('11/01/2012'))
+      account.withdraw(500)
+      expect(account.print_statement).to eq "date || credit || debit || balance\n11/01/2012 || || 500 || 500\n10/01/2012 || 1000 || || 1000"
     end
   end
 end

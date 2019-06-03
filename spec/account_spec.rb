@@ -3,46 +3,39 @@ describe 'Account' do
   let(:default_balance) { Account::DEFAULT_BALANCE }
   let(:account) { Account.new }
 
-# as a bank manager
-# so that we can keep our books straight
-# i would like accounts to start with an opening balance of 0
-
   describe 'balance' do
     it 'starts with the given default balance' do
       expect(account.balance).to eq default_balance
     end
   end
 
-# as a bank user
-# so that i can see how much money is in my account
-# I would like to be able to print a statement that shows my balance
+  describe 'statement' do
+    it 'starts as an empty string' do
+      expect(account.statement).to eq ""
+    end
+  end
 
   describe 'print_statement' do
-    it 'prints the current balance' do
-      expect(account.print_statement).to include "0"
+    it 'prepends the statement with a header and prints it' do
+      expect(account.print_statement).to eq "date || credit || debit || balance"
     end
   end
-
-# as a bank user
-# so that i can store money
-# i would like to be able to make deposits into my account
 
   describe 'deposit' do
-    it 'adds the given amount to the account balance' do
+    it 'adds the given amount to the account balance and prepends the statement' do
+      allow(Time).to receive(:now).and_return(Time.parse('01/04/2001'))
       account.deposit(99)
       expect(account.balance).to eq(default_balance + 99)
+      expect(account.print_statement).to eq "date || credit || debit || balance\n01/04/2001 || 99 || || 99"
     end
   end
 
-# as a bank user
-# so that i can spend my money
-# i would like to be able to make withdrawals out of my account
-
   describe 'withdraw' do
-    it 'removes the given amount to the account balance' do
-      account.deposit(99)
+    it 'removes the given amount from the account balance and prepends the statement' do
+      allow(Time).to receive(:now).and_return(Time.parse('02/05/2002'))
       account.withdraw(43)
-      expect(account.balance).to eq(99 - 43)
+      expect(account.balance).to eq(-43)
+      expect(account.print_statement).to eq "date || credit || debit || balance\n02/05/2002 || || 43 || -43"
     end
   end
 

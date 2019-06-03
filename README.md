@@ -8,6 +8,9 @@
 - rspec init
 - bundle init (add ruby version, rspec, rubocop and simplecov to gemfile)
 - created rubocop.yml added scaffolint
+- TDD'd up until I realised I needed a redesign (when i needed to include transaction dates)
+- refactored to include required statement formatting
+- need to extract statement formatting behaviour
 
 ---
 Description of the problem - Makers given readme...
@@ -58,7 +61,7 @@ I started by making a list of the behaviours I expect my program will need to me
 - record date
 - record balance
 - record deposits (credit)
-- record withdrawals (deposit)
+- record withdrawals (debit)
 
 - see date
 - see balance
