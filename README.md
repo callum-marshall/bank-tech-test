@@ -86,13 +86,13 @@ i would like to be able to make deposits into my account
 ```
 ```
 as a bank user
-so that i can keep track of my deposits
-i would like to be able to print a statement that shows my deposits
+so that i can spend my money
+i would like to be able to make withdrawals out of my account
 ```
 ```
 as a bank user
-so that i can spend my money
-i would like to be able to make withdrawals out of my account
+so that i can keep track of my deposits
+i would like to be able to print a statement that shows my deposits
 ```
 ```
 as a bank user

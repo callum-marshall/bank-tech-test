@@ -14,6 +14,10 @@ class Account
     @balance += amount
   end
 
+  def withdraw(amount)
+    @balance -= amount
+  end
+
   DEFAULT_BALANCE = 0
 
 end
