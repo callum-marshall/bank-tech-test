@@ -47,7 +47,7 @@ date || credit || debit || balance
 ```
 ---
 
-## My Approach
+# My Approach
 
 I started by making a list of the actions (potentially methods) I expect my program will need to meet the requirements.
 
@@ -73,31 +73,38 @@ I then wrote User Stories to match these expected actions
 as a bank manager
 so that we can keep our books straight
 i would like accounts to start with an opening balance of 0
-
+```
+```
 as a bank user
 so that i can see how much money is in my account
 I would like to be able to print a statement that shows my balance
-
+```
+```
 as a bank user
 so that i can store money
 i would like to be able to make deposits into my account
-
+```
+```
 as a bank user
 so that i can keep track of my deposits
 i would like to be able to print a statement that shows my deposits
-
+```
+```
 as a bank user
 so that i can spend my money
 i would like to be able to make withdrawals out of my account
-
+```
+```
 as a bank user
 so that i can keep track of my deposits
 i would like to be able to print a statement that shows my withdrawals
-
+```
+```
 as a bank user
 so that i know which days i made withdrawals and deposits
 i would like to be able to print a statement that shows the date on which my activities occurred
-
+```
+```
 as a bank manager
 so that i can have a uniform statement
 i would like our customers statements to be printed in the specified format
