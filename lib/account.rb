@@ -7,7 +7,11 @@ class Account
   end
 
   def print_statement
-    return "#{@balance}"
+    return "#{date} #{@balance}"
+  end
+
+  def date
+    return Time.now.strftime("%d/%m/%y")
   end
 
   def deposit(amount)

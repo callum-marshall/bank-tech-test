@@ -19,7 +19,7 @@ describe 'Account' do
 
   describe 'print_statement' do
     it 'prints the current balance' do
-      expect(account.print_statement).to eq "0"
+      expect(account.print_statement).to include "0"
     end
   end
 

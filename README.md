@@ -49,21 +49,21 @@ date || credit || debit || balance
 
 # My Approach
 
-I started by making a list of the actions (potentially methods) I expect my program will need to meet the requirements.
+I started by making a list of the behaviours I expect my program will need to meet the requirements.
 
-make deposits
-make withdrawal
-print statements (in the specified format)
+- make deposits
+- make withdrawals
+- print statements (in the specified format)
 
-record date
-record balance
-record deposits (credit)
-record withdrawals (deposit)
+- record date
+- record balance
+- record deposits (credit)
+- record withdrawals (deposit)
 
-see date
-see balance
-see deposits (credit)
-see withdrawals (deposit)
+- see date
+- see balance
+- see deposits (credit)
+- see withdrawals (deposit)
 
 I then wrote User Stories to match these expected actions
 
