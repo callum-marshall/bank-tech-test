@@ -6,6 +6,10 @@ class Account
     @balance = DEFAULT_BALANCE
   end
 
+  def print_statement
+    return "#{@balance}"
+  end
+
   private
 
   DEFAULT_BALANCE = 0
