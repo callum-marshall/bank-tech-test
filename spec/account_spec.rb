@@ -9,27 +9,33 @@ describe 'Account' do
     end
   end
 
-  describe 'print_statement' do
-    it 'prepends the statement with a header and prints it' do
-      expect(account.print_statement).to eq "date || credit || debit || balance"
+  describe 'statement_format' do
+    it 'returns the formatted string' do
+      expect(account.statement_format).to eq "date || credit || debit || balance"
+    end
+  end
+
+  describe 'puts_statement' do
+    it "puts's the formatted statement string" do
+      expect { account.puts_statement }.to output("date || credit || debit || balance\n").to_stdout
     end
   end
 
   describe 'deposit' do
-    it 'adds the given amount to the account balance and prepends the statement' do
+    it 'adds the given amount to the account balance and prints confirmation' do
       allow(Time).to receive(:now).and_return(Time.parse('01/04/2001'))
-      account.deposit(99)
+
+      expect(account.deposit(99)).to eq "You deposited 99"
       expect(account.balance).to eq(default_balance + 99)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n01/04/2001 || 99.00 || || 99.00"
     end
   end
 
   describe 'withdraw' do
-    it 'removes the given amount from the account balance and prepends the statement' do
+    it 'removes the given amount from the account balance and prints confirmation' do
       allow(Time).to receive(:now).and_return(Time.parse('02/05/2002'))
-      account.withdraw(43)
+
+      expect(account.withdraw(43)).to eq "You withdrew 43"
       expect(account.balance).to eq(-43)
-      expect(account.print_statement).to eq "date || credit || debit || balance\n02/05/2002 || || 43.00 || -43.00"
     end
   end
 

@@ -13,11 +13,11 @@ class Transaction
   private
 
   def date_format(time)
-    return time.strftime("%d/%m/%Y")
+    time.strftime("%d/%m/%Y")
   end
 
   def currency_format(amount)
-    return sprintf("%.2f", amount)
+    sprintf("%.2f", amount)
   end
 
 end

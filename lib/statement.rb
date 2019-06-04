@@ -5,9 +5,9 @@ class Statement
     @statement = ""
   end
 
-  def print(transactions)
+  def format(transactions)
     transactions.each do |transaction|
-      statement_formatting(transaction)
+      line_format(transaction)
     end
     @statement.prepend(HEADER)
     @statement
@@ -17,7 +17,7 @@ class Statement
 
   HEADER = "date || credit || debit || balance"
 
-  def statement_formatting(transaction)
+  def line_format(transaction)
     if transaction.type == "credit"
       @statement.prepend(credit_format(transaction))
     elsif transaction.type == "debit"

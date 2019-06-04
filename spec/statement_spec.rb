@@ -10,7 +10,7 @@ describe 'Statement' do
 
     it "returns a string of transactions" do
       statement = Statement.new
-      expect(statement.print(@transactions)).to eq "date || credit || debit || balance\n22/05/2018 || || 20.00 || 80\n03/05/2018 || 40.00 || || 100"
+      expect(statement.format(@transactions)).to eq "date || credit || debit || balance\n22/05/2018 || || 20.00 || 80\n03/05/2018 || 40.00 || || 100"
     end
   end
 
