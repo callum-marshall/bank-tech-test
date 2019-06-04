@@ -9,12 +9,6 @@ describe 'Account' do
     end
   end
 
-  describe 'statement' do
-    it 'starts as an empty string' do
-      expect(account.statement).to eq ""
-    end
-  end
-
   describe 'print_statement' do
     it 'prepends the statement with a header and prints it' do
       expect(account.print_statement).to eq "date || credit || debit || balance"

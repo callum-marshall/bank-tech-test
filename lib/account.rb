@@ -1,4 +1,5 @@
 require_relative 'transaction'
+require_relative 'statement'
 
 class Account
 
@@ -6,17 +7,12 @@ class Account
 
   def initialize
     @balance = DEFAULT_BALANCE
-    @statement = ""
     @transactions = []
   end
 
   def print_statement
-    @transactions.each do |transaction|
-      @statement.prepend("\n#{transaction.date} || #{transaction.amount} || || #{transaction.balance}") if transaction.type == "credit"
-      @statement.prepend("\n#{transaction.date} || || #{transaction.amount} || #{transaction.balance}") if transaction.type == "debit"
-    end
-    @statement.prepend("date || credit || debit || balance")
-    @statement
+    statement = Statement.new
+    statement.print(@transactions)
   end
 
   def deposit(amount)

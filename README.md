@@ -11,7 +11,10 @@
 - TDD'd up until I realised I needed a redesign (when i needed to include transaction dates)
 - refactored to include required statement formatting
 - added decimal places method
-- need to extract statement formatting behaviour
+- encapsulated transaction behaviour in transaction class
+- updated account class so tests still pass
+- encapsulated statement behaviour in statement class
+- updated account class so tests still pass
 
 ---
 Description of the problem - Makers given readme...
