@@ -1,3 +1,5 @@
+require_relative 'transaction'
+
 class Account
 
   attr_reader :balance, :statement
@@ -5,37 +7,28 @@ class Account
   def initialize
     @balance = DEFAULT_BALANCE
     @statement = ""
+    @transactions = []
   end
 
   def print_statement
+    @transactions.each do |transaction|
+      @statement.prepend("\n#{transaction.date} || #{transaction.amount} || || #{transaction.balance}") if transaction.type == "credit"
+      @statement.prepend("\n#{transaction.date} || || #{transaction.amount} || #{transaction.balance}") if transaction.type == "debit"
+    end
     @statement.prepend("date || credit || debit || balance")
-    return @statement
+    @statement
   end
 
   def deposit(amount)
     @balance += amount
-    value = currency_format(amount)
-    balance = currency_format(@balance)
-    @statement.prepend("\n#{date} || #{value} || || #{balance}")
+    @transactions << Transaction.new("credit", amount, @balance)
   end
 
   def withdraw(amount)
     @balance -= amount
-    value = currency_format(amount)
-    balance = currency_format(@balance)
-    @statement.prepend("\n#{date} || || #{value} || #{balance}")
+    @transactions << Transaction.new("debit", amount, @balance)
   end
 
   DEFAULT_BALANCE = 0
-
-  private
-
-  def date
-    return Time.now.strftime("%d/%m/%Y")
-  end
-
-  def currency_format(amount)
-    sprintf("%.2f", amount)
-  end
 
 end
