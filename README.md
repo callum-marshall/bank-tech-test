@@ -1,28 +1,9 @@
 # Bank Tech Test
 ## Week 10 - Makers Academy Individual Challenge
 
-- git init
-- added my approach to readme
-- added user stories to readme
-- crc card for 1st user story
-- rspec init
-- bundle init (add ruby version, rspec, rubocop and simplecov to gemfile)
-- created rubocop.yml added scaffolint
-- TDD'd up until I realised I needed a redesign (when i needed to include transaction dates)
-- refactored to include required statement formatting
-- added decimal places method
-- encapsulated transaction behaviour in transaction class
-- updated account class so tests still pass
-- encapsulated statement behaviour in statement class
-- updated account class so tests still pass
--
+### Context - Makers Readme
 
----
-Description of the problem - Makers given readme...
-
-# Bank tech test
-
-Today, you'll practice doing a tech test.
+Practice doing a tech test...
 
 For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
 
@@ -55,9 +36,9 @@ date || credit || debit || balance
 ```
 ---
 
-# My Approach
+## My Approach
 
-I started by making a list of the behaviours I expect my program will need to meet the requirements.
+I started by making a list of the behaviours I expect my program will need to meet the requirements and acceptance criteria
 
 - make deposits
 - make withdrawals
@@ -78,23 +59,13 @@ I then wrote User Stories to match these expected actions
 ### User Stories
 
 ```
-as a bank manager
-so that we can keep our books straight
-i would like accounts to start with an opening balance of 0
-```
-```
 as a bank user
-so that i can see how much money is in my account
-I would like to be able to print a statement that shows my balance
-```
-```
-as a bank user
-so that i can store money
+so that i can save my money
 i would like to be able to make deposits into my account
 ```
 ```
 as a bank user
-so that i can spend my money
+so that i can use my money
 i would like to be able to make withdrawals out of my account
 ```
 ```
@@ -110,10 +81,27 @@ i would like to be able to print a statement that shows my withdrawals
 ```
 as a bank user
 so that i know which days i made withdrawals and deposits
-i would like to be able to print a statement that shows the date on which my activities occurred
+i would like to be able to print a statement that shows the date on which transactions occurred
 ```
-```
-as a bank manager
-so that i can have a uniform statement
-i would like our customers statements to be printed in the specified format
-```
+
+---
+
+## Instructions
+
+### Set up
+
+1. Clone this repository
+2. Navigate to the directory in command line
+3. Run `bundle install`
+4. Tests can be run with `rspec`
+
+### Run the project
+
+1. run `irb` in the root directory
+2. require the account.rb file `require './lib/account.rb'`
+3. create a new instance of an account with `account_name = Account.new`
+4. make a deposit with `account_name.deposit(amount to deposit)`
+5. make a withdrawal with `account_name.withdraw(amount to withdraw)`
+6. print your statement with `account_name.puts_statement`
+
+[example use in IRB](bank-tech-test.png)
